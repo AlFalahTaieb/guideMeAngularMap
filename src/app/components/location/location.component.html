@@ -1,0 +1,32 @@
+
+<a [routerLink]="['/locations']">Go Back</a>
+
+
+<br>
+<h2 class="page-header">{{location.title}} <small> <strong>Entrée pour Handicapé:Oui</strong></small></h2>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <!-- IMAGE HERE -->
+      <div class="img-wrapper">
+      <img src="http://img01.deviantart.net/24d0/i/2005/362/9/c/minimal_museum_by_slaktad.jpg" alt="Just Background">
+  </div>
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">Latitude: {{location.latitude}}</li>
+      <li class="list-group-item">Longitude: {{location.longitude}}</li>
+    <li class="list-group-item">  {{location.ouverture}}</li>
+
+    </ul>
+  </div>
+  <a class="btn btn-default" [routerLink]="['/edit-location/'+location._id]">Edit</a>
+  <a class="btn btn-danger"  (click)="deleteLocation(location._id)">Delete</a>
+</div>
+<sebm-google-map [latitude]="location.latitude" [longitude]="location.longitude" >
+  <sebm-google-map-marker [latitude]="location.latitude" [longitude]="location.longitude"></sebm-google-map-marker>
+
+</sebm-google-map>
+
+

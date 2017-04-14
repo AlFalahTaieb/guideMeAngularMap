@@ -1,0 +1,47 @@
+<!-- <ul class="list-group">
+	<li class="list-group-item" *ngFor="let location of locations">
+
+<a [routerLink]="['/location/'+location._id]">{{location.title}}</a>
+</li>
+</ul> -->
+<!-- I HATE YOU "'" 1heure wa7el à cause de ça ->' -->
+
+<section style="background-color: #42d9f4">
+  <!--for demo wrap-->
+  <h1>Locations</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Location</th>
+        <th>Latitude</th>
+          <th>Longitude</th>
+           <th>Ouverture</th>
+          <!--  <th>Change %</th> -->
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+
+        <tr *ngFor="let location of locations">
+          <td [routerLink]="['/location/'+location._id]">{{location.title}}</td>
+			<td>{{location.latitude}}</td>
+			<td>{{location.longitude}}</td>
+    		<td>{{location.ouverture}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
+  <sebm-google-map-marker *ngFor=" let location of locations" [latitude]="location.latitude" [longitude]="location.longitude" ></sebm-google-map-marker>
+</sebm-google-map>
+
+
+
+

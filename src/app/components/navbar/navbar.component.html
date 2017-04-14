@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Locations</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li ><a [routerLink]="['/']">Home</a></li>
+              <li ><a [routerLink]="['/map']">Map</a></li>
+            <li *ngIf="(af.auth | async)"><a  [routerLink]="['/locations']">Locations</a></li>
+             <li *ngIf="(af.auth | async)"><a [routerLink]="['/add-location']">Add Location</a></li>
+          </ul>
+
+
+          <ul class="nav navbar-nav navbar-right">
+       <!--    //hide if  log in -->
+           <li *ngIf="!(af.auth | async)"><a [routerLink]="['/']"(click)="login()">LogIn</a></li>
+           <!-- //hide if not g in -->
+           <li *ngIf="(af.auth | async)"><a [routerLink]="['/']"(click)="logout()">LogOut</a></li>
+          
+          </ul>
+
+      
+
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

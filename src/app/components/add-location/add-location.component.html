@@ -1,0 +1,25 @@
+<a [routerLink]="['/locations']">Back</a>
+<br />
+<h2 class="page-header">Add Location</h2>
+<form (submit)="onAddSubmit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" [(ngModel)]="location.title" name="title" required>
+  </div>
+  <div class="form-group">
+    <label>Altitude</label>
+    <input class="form-control" type="text" [(ngModel)]="location.latitude" name="latitude" required>
+  </div>
+  <div class="form-group">
+    <label>Longitude</label>
+    <input class="form-control" type="text" [(ngModel)]="location.longitude" name="longitude" required>
+  </div>
+  <div class="form-group">
+    <label>Ouverture</label>
+    <input class="form-control" type="text" [(ngModel)]="location.ouverture" name="ouverture" required>
+  </div>
+<!--   <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" >
+  </div> -->
+  <input type="submit" value="submit" class="btn btn-success">
+</form>
